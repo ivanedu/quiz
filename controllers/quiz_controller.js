@@ -26,7 +26,14 @@ exports.answer=function(req,res){
 };
 
 exports.index=function(req,res){
-	models.Quiz.findAll().then(function(quizes){
-		res.render('quizes/',{quizes:quizes});	
+	var search="%%";
+	if(req.query.search){
+		var s=req.query.search;
+		s=s.replace(/ /g,"%");
+		search="%"+s+"%";
+	}
+
+	models.Quiz.findAll({where:["pregunta like ?",search]}).then(function(quizes){
+		res.render('quizes/',{quizes:quizes,req:req});	
 	}).catch(function(error){next(error);})
 };
