@@ -35,8 +35,8 @@ exports.Quiz=Quiz;//exportar deinicion de tabla Quiz
 //sequelize.sync() crea e inicializa tabla de preguntas en BD
 sequelize.sync().then(function(){
 	Quiz.count().then(function(count){
-		if(count===1){//la tabla se inicializa solo si esta vacia			
-			Quiz.create({pregunta:'Capital de Portugal',
+		if(count===0){//la tabla se inicializa solo si esta vacia			
+			Quiz.create({tema:"Humanidades",pregunta:'Capital de Portugal',
 				respuesta:'Lisboa'})
 			.then(function(){console.log('Base de datos inicializada')});
 		};
