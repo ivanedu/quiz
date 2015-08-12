@@ -15,7 +15,7 @@
 <script>
 for(var indice=0 ;indice<document.getElementById("tema").length;indice++)
     {
-	if (document.getElementById("tema").options[indice].Text===<%=quiz.tema%>)
+	if (document.getElementById("tema").options[indice].value==="<%=quiz.tema%>")
             document.getElementById("tema").selectedIndex =indice;
     }
 </script>
