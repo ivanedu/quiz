@@ -4,8 +4,8 @@ var app = require('../app');
 var fs=require("fs");
 var https=require("https");
 var options={
-	key:fs.readFileSync('cert/quiz-2015-ivan-key.pem').toString(),
-	cert:fs.readFileSync('cert/quiz-2015-cert-ivan.pem').toString()
+	key:fs.readFileSync('certs/quiz-2015-ivan-key.pem').toString(),
+	cert:fs.readFileSync('certs/quiz-2015-cert-ivan.pem').toString()
 };
 
 app.set('port', process.env.PORT || 3000);
